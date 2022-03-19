@@ -1,6 +1,6 @@
 import server from "./server.js";
 import config from "./config.js";
-import { logger } from "./utils.js";
+import { logger } from "./util.js";
 
 server
   .listen(config.port)

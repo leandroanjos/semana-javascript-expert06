@@ -1,0 +1,32 @@
+// Obter informações do arquivo de audio
+sox \
+  --i \
+  "audio/songs/conversation.mp3"
+
+
+// Obter o bitrate
+sox \
+  --i \
+  -B \
+  "audio/fx/Applause Sound Effect HD No Copyright (128 kbps).mp3"
+
+// Converter o bitrate
+sox \
+  -v 0.99 \
+  -t mp3 \
+  "audio/fx/Applause Sound Effect HD No Copyright (128 kbps).mp3" \
+  -r 48000 \
+  -t mp3 \
+  "output.mp3"
+
+// Concatenar dois audios
+sox \
+  -t mp3 \
+  -v 0.99 \
+  -m "audio/songs/conversation.mp3" \
+  -t mp3 \
+  -v 0.99 \
+  -t mp3 \
+  "audio/fx/Laughing Sound #3 - Audience laughing Sound Effects(HD) No Copyright Sound Effects (128 kbps).mp3" \
+  -t mp3 \
+  "output.mp3"
